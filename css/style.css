@@ -1,0 +1,37 @@
+.rabbitRunGame{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+#fredsCommute{
+    background-color: lightyellow;
+    height: 50%;
+    width: 100%;
+}
+
+span{
+    font-family: 'Moirai One', cursive;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: blue;
+}
+
+#freddy{
+    background-color: pink;
+    height: 5%;
+    width: 5%;
+}
+#bossCommute{
+    background-color: lightgreen;
+    height: 50%;
+    width: 100%;
+}
+
+
+#mrBossy{
+    background-color: blue;
+    height: 5%;
+    width: 5%;
+}
