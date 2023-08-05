@@ -1,13 +1,33 @@
 .rabbitRunGame{
     position: fixed;
+    margin: auto;
     height: 100%;
     width: 100%;
 }
 
+#startButton{
+    height: 10%;
+    width: 15%;
+    background-color: orange;
+    color: white;
+}
+
+#diceButton{
+    height: 10%;
+    width: 15%;
+    background-color: orange;
+    color: white;
+
+}
+
 #fredsCommute{
+    position: relative;
     background-color: lightyellow;
     height: 50%;
     width: 100%;
+    /*background-image: url("https://images.unsplash.com/photo-1620004071518-52531ff9162c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80");
+    background-position: bottom;*/
+ 
 }
 
 span{
@@ -19,19 +39,26 @@ span{
 }
 
 #freddy{
+    position: absolute;
     background-color: pink;
     height: 5%;
     width: 5%;
+    left: 0%;
+    bottom: 0%;
 }
 #bossCommute{
     background-color: lightgreen;
     height: 50%;
     width: 100%;
+    /*background-image: url("https://images.unsplash.com/photo-1562535929-484a9669ea17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80");
+    background-position: bottom;*/
 }
 
-
-#mrBossy{
+#boss{
+    position: absolute;
     background-color: blue;
     height: 5%;
     width: 5%;
+    left: 0%;
+    bottom: 0%;
 }
