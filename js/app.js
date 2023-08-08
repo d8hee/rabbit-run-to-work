@@ -1,4 +1,5 @@
 //variables
+let rabbitRunGame = document.getElementById("rabbitRunGame")
 let fredsCommute = document.getElementById("fredsCommute")
 let bossCommute = document.getElementById("bossCommute")
 let freddy = document.getElementById("freddy")
@@ -10,7 +11,7 @@ let diceButton = document.getElementById("diceButton")
     //boss position at 80%
 //]
 
-//let currentPlayer = freddy
+let currentPlayer = freddy
 //check if game is currently running
 let running = false
 
@@ -36,50 +37,93 @@ let players = [fredRabbit, bossRabbit]
 
 //console.dir(freddy)
 
-//diceButton.addEventListener("click", rollDie )
-//add something to delay move until after number display
+
+let winRound = false
+computerPlays=()=>{
+    if(currentPlayer === boss){
+        rollDie()
+        moveSteps()
+        checkWinner()
+    }
+}
 
 /*
 class GameLogic {                                       
         startGame(){
-            //document.addEventListener("click", startButton){
-                //mainpage disappears, gamepage appears
-                //countdown animation
-                //bold span to show which player's turn?
-            //}
-            running = true
+            //startButton.addEventListener("click", ){
+                running = true
+            }
+            //diceButton.addEventListener("click", rollDie )
+        //add something to delay move until after number display
         } 
         rollDie(){
-            //2.die generates a random number
+            //add animation
+            //die generates a random number
             let rollNum = Math.floor(Math.random()*3)
 
-            //3.die displays number
-
-            //4.player character moves that num of steps
-            freddy.style.left += ""+rollNum+"%"
-            //(CSSStyleDeclaration object)
-
+            //die displays number
+            moveSteps()
             checkWinner()
             changePlayer()
         }
+        moveSteps(){
+            //player character moves that num of steps
+            currentPlayer.style.left += ""+rollNum+"%"
+        }
         checkWinner(){
-            //5.if character is 100% of width, they win
-            //6.if not, other player's turn
-            let winRound = false
-
+            if(currentPlayer.style.left === "90%"){
+                rabbitRunGame.innerText = "you win!"
+                //make this a delayed animation w win msg
+            }else{
+                let winRound = false
+                changePlayer()
+            }
         }
         changePlayer(){
-            if(currentPlayer = freddy){
+            if(winRound === false && currentPlayer === freddy){
                 currentPlayer = boss
-            }else if(currentPlayer = boss){
+                computerPlays()
+            }else if(winRound === false && currentPlayer === boss){
                 currentPlayer = freddy
             }
-                //bold span to show which player's turn?
-
+        //bold span to show which player's turn?
         }
+        //computerPlays(){
+           
+//        }
         reset(){
             //eventlistener on reset button click 
         }
-
     }
+
+*/
+/* game logic
+starting page with animation and instructions
+player presses start
+start page disappears
+game page appears.
+roll the die animation "press roll die" (player name on top?)
+rolling die animation
+display number on animation
+player moves x steps
+game checks if anyone won
+game continues w comp turn
+computer turn
+    computer presses roll die
+    number generated
+    boss moves x steps
+    checkwin
+    noone wins msg
+    change player
+computer roll's die animation (comp name on top)
+display number on animation
+computer moves x steps
+game checks if anyone won
+game continues w player turn
+
+for game win check, if player/comp .style.left = 80%
+announce winner/loser
+end game
+restart button
+
 */
