@@ -1,3 +1,8 @@
+#mainPage{
+    position: absolute;
+    z-index: 6;
+}
+
 #rabbitRunGame{
     position: fixed;
     margin: auto;
@@ -13,8 +18,13 @@
 }
 
 #diceButton{
+    position: absolute;
+  
+    z-index: 5;
     height: 10%;
     width: 15%;
+    top: 30%;
+    left: 45%;
     background-color: orange;
     color: white;
 
@@ -61,4 +71,16 @@ span{
     width: 5%;
     left: 0%;
     bottom: 0%;
+}
+
+#endPage{
+    position: absolute;
+    display: none;
+    background-color: pink;
+}
+
+#restart{
+    position: relative;
+    z-index: 4;
+    background-color: brown;
 }

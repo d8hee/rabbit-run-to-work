@@ -7,15 +7,41 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Moirai+One&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
-    <nav>
-        <a href="./gamePage.html">        
+    <container id="mainPage">
+            <div> <img src="https://petkeen.com/wp-content/uploads/2020/10/Brown-Netherland-dwarf-rabbit_RATT_ANARACH_Shutterstock-760x570.webp" alt="tiny late rabbit"></div>
             <button type="button" id="startButton">Start the game</button>
-        </a>
+    </container>
 
-    </nav>
+    <container id="endPage">
+        <div>
+            <p> </p>
+            <button id="restart">Play again</button>
+        </div>
+    </container>
+
+    <div id="rabbitRunGame">
+        <button type="button" id="diceButton">Roll the die to move Fred!</button>
+        <div id="fredsCommute">
+            <span>
+                <p>Fred the Rabbit</p>
+            </span>
+            <div id="freddy"></div>
+        </div>
+
+        <div id="bossCommute">
+            <span>
+                <p>Monsieur Bossman</p>
+            </span>
+            <div id="boss"></div>
+        </div>
+    </div>
+
+
+
 
     <script src="./js/app.js"></script>
 </body>
