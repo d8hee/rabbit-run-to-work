@@ -1,4 +1,5 @@
 #mainPage{
+    display: block;
     position: absolute;
     z-index: 6;
 }

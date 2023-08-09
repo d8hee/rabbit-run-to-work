@@ -23,22 +23,23 @@ class Player {
         console.log(`moving! new distance is ${this.distance}`)
         this.character.style.left = this.distance + "%"
     }
+    resetPosition() {
+        this.distance = 0
+        this.character.style.left = this.distance
+    }
 }
 
 const fredRabbit = new Player("Fred", freddy)
 const bossRabbit = new Player("Monsieur Bossman", boss)
 
-//Start with fred
+//Start the game with fred. Noone has won, dice is not rolled.
 let currentPlayer = fredRabbit
-//game is not won yet
 let winRound = false
-//variable for random number for dice
 let diceRoll = 0
 
+//Game logic that allows play through game on 'click'ing start button
 startGame = () => {
-    console.log("starting game")
-    mainPage.hidden = "true"
-
+    mainPage.style.display = "none"
     diceButton.style.display = "block"
     diceButton.addEventListener("click", () => {
         diceRoll = rollDie()
@@ -73,13 +74,12 @@ changePlayer = () => {
 }
 
 checkWin = () => {
-    if (currentPlayer.distance >= 90) {
-        console.log("game ends")
-        endPage.style.display = "block"
-        //add image and restart button
+    if (fredRabbit.distance >= 90 || bossRabbit.distance >= 90) {
         winRound = true
-        console.log("game is dun")
-        restart()
+        //add winning/losing message with restart button
+        endPage.style.display = "block"
+        //this shows restart button 
+        playAgain()
     } else {
         winRound = false
         console.log("game is still goin")
@@ -92,18 +92,15 @@ rollDie = () => {
     return Math.floor(Math.random() * 9 + 1)
 }
 
-/*
-resetGame = () => {
-    mainPage.hidden = "false"
-
+playAgain = () => {
+    restartBtn.addEventListener("click", () => {
+        endPage.style.display = "none"
+        fredRabbit.resetPosition()
+        bossRabbit.resetPosition()
+        mainPage.style.display = "block"
+        startButton.addEventListener("click", startGame)
+    })
 }
-
-restart = () => {
-    //eventlistener on reset button click 
-    restartBtn.addEventListener("click", resetGame)
-
-}
-*/
 
 startButton.addEventListener("click", startGame)
 
