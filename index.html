@@ -8,32 +8,36 @@
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Moirai+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
     <!--container for main start page-->
     <container id="mainPage">
         <h1>Rabbit Run</h1>
-        <div> <img
-                src="https://petkeen.com/wp-content/uploads/2020/10/Brown-Netherland-dwarf-rabbit_RATT_ANARACH_Shutterstock-760x570.webp"
-                alt="tiny late rabbit">
+        <div> <img src="https://i.imgur.com/MLOW6Qg.png" alt="tiny late rabbit">
         </div>
-        <h4>
-            Fred the rabbit slept through his alarm. Roll the die, and help Fred get to work before his boss!
-        </h4    >
-        <p>
-            Press the button below to start
-        </p>
+        <h2>
+            Fred the rabbit slept through his alarm.
+            <br>
+            Help Fred get to work before his boss!
+        </h2>
+
         <button type="button" id="startButton">
-            Start the game
+            START THE GAME
         </button>
+        <footer>
+            <a
+                href="https://www.freepik.com/free-vector/hand-drawn-emotes-elements-collection_34305338.htm#query=bunny%20animation&position=48&from_view=search&track=ais">Image
+                by pikisuperstar</a> on Freepik
+        </footer>
     </container>
 
     <!--container for ending restart page with button-->
     <container id="endPage">
         <div>
             <p id="endingMessage"> </p>
+            <img id="fredWon" src="https://i.imgur.com/44pcRiM.png" alt="happy Fred">
+            <img id="bossWon" src="https://i.imgur.com/y45mOPl.png" alt="upset boss rabbit">
             <button id="restart">RESTART GAME</button>
         </div>
     </container>
@@ -41,7 +45,7 @@
     <!--main game page-->
     <div id="rabbitRunGame">
         <!--dice roll-->
-        <button type="button" id="diceButton">Roll the die to move Fred!</button>
+        <button type="button" id="diceButton">Roll a die to move Fred!</button>
         <img class="classForDie" id="dieImage" src="https://i.imgur.com/8htN3HN.png" alt="dice">
 
 
@@ -52,9 +56,7 @@
             </span>
             <!--fred character-->
             <div id="freddy">
-                <img id="freddyCharacter"
-                    src="https://as1.ftcdn.net/v2/jpg/05/58/30/26/1000_F_558302664_usO2Ikpq0UZNmAps1dvIf29x2yS6ars5.jpg"
-                    alt="fred the rabbit character">
+                <img class="players" src="https://i.imgur.com/rXZhdHr.png" alt="fred the rabbit character">
             </div>
         </div>
 
@@ -65,12 +67,13 @@
             </span>
             <!--boss character-->
             <div id="boss">
-                <img src="" alt="boss rabbit character">
+                <img class="players" src="https://i.imgur.com/GzrdY7J.png" alt="boss rabbit character">
             </div>
         </div>
     </div>
 
     <script src="./js/app.js"></script>
+
 </body>
 
 </html>
