@@ -98,6 +98,19 @@ footer{
     height: 10%;
     width: 5%;
     bottom: 0%;
+    animation: fredJump 1s ease-in-out infinite;
+}
+
+@keyframes fredJump{
+    0%{
+        transform: translate(0);
+    }
+    50%{
+        transform: translate(0,1rem);
+    }
+    100%{
+        transform: translate(0);
+    }
 }
 
 #bossCommute {
@@ -115,6 +128,19 @@ footer{
     height: 5%;
     width: 5%;
     bottom: 2%;
+    animation: bossJump 1s ease-in-out infinite;
+}
+
+@keyframes bossJump{
+    0%{
+        transform: translate(0);
+    }
+    50%{
+        transform: translate(0,1rem);
+    }
+    100%{
+        transform: translate(0);
+    }
 }
 
 #endPage {
