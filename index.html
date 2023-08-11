@@ -7,41 +7,68 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Moirai+One&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+    <!--container for main start page-->
     <container id="mainPage">
-            <div> <img src="https://petkeen.com/wp-content/uploads/2020/10/Brown-Netherland-dwarf-rabbit_RATT_ANARACH_Shutterstock-760x570.webp" alt="tiny late rabbit"></div>
-            <button type="button" id="startButton">Start the game</button>
+        <h1>Rabbit Run</h1>
+        <div> <img
+                src="https://petkeen.com/wp-content/uploads/2020/10/Brown-Netherland-dwarf-rabbit_RATT_ANARACH_Shutterstock-760x570.webp"
+                alt="tiny late rabbit">
+        </div>
+        <h4>
+            Fred the rabbit slept through his alarm. Roll the die, and help Fred get to work before his boss!
+        </h4    >
+        <p>
+            Press the button below to start
+        </p>
+        <button type="button" id="startButton">
+            Start the game
+        </button>
     </container>
 
+    <!--container for ending restart page with button-->
     <container id="endPage">
         <div>
-            <p> </p>
-            <button id="restart">Restart game</button>
+            <p id="endingMessage"> </p>
+            <button id="restart">RESTART GAME</button>
         </div>
     </container>
 
+    <!--main game page-->
     <div id="rabbitRunGame">
+        <!--dice roll-->
         <button type="button" id="diceButton">Roll the die to move Fred!</button>
+        <img class="classForDie" id="dieImage" src="https://i.imgur.com/8htN3HN.png" alt="dice">
+
+
+        <!--box for Fred-->
         <div id="fredsCommute">
-            <span>
+            <span id="playerTitle">
                 <p>Fred the Rabbit</p>
             </span>
-            <div id="freddy"></div>
+            <!--fred character-->
+            <div id="freddy">
+                <img id="freddyCharacter"
+                    src="https://as1.ftcdn.net/v2/jpg/05/58/30/26/1000_F_558302664_usO2Ikpq0UZNmAps1dvIf29x2yS6ars5.jpg"
+                    alt="fred the rabbit character">
+            </div>
         </div>
 
+        <!--box for boss-->
         <div id="bossCommute">
-            <span>
+            <span id="computerTitle">
                 <p>Monsieur Bossman</p>
             </span>
-            <div id="boss"></div>
+            <!--boss character-->
+            <div id="boss">
+                <img src="" alt="boss rabbit character">
+            </div>
         </div>
     </div>
-
-
-
 
     <script src="./js/app.js"></script>
 </body>

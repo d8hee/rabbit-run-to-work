@@ -7,7 +7,9 @@ let freddy = document.getElementById("freddy")
 let boss = document.getElementById("boss")
 let startButton = document.getElementById("startButton")
 let diceButton = document.getElementById("diceButton")
+let dieImage = document.getElementById("dieImage")
 let endPage = document.getElementById("endPage")
+let endMsg = document.getElementById("endingMessage")
 let restartBtn = document.getElementById("restart")
 
 class Player {
@@ -32,6 +34,23 @@ class Player {
 const fredRabbit = new Player("Fred", freddy)
 const bossRabbit = new Player("Monsieur Bossman", boss)
 
+
+const rolling = [
+    {display: "block"},
+    {transform: "rotate(0)"},
+    {transform: "rotate(360deg)"},
+    {display: "none"}
+]
+
+const rollingDuration = {
+    duration: 400,
+    iterations: 2
+}
+
+const rollingAnimation = () => {
+    dieImage.animate(rolling, rollingDuration)
+}
+
 //Start the game with fred. Noone has won, dice is not rolled.
 let currentPlayer = fredRabbit
 let winRound = false
@@ -41,12 +60,16 @@ let diceRoll = 0
 startGame = () => {
     mainPage.style.display = "none"
     diceButton.style.display = "block"
+
     diceButton.addEventListener("click", () => {
         diceRoll = rollDie()
+        //display diceRoll value on display for 2 second w delay
+        rollingAnimation()
         fredRabbit.move(diceRoll)
         checkWin()
         changePlayer() //fred to boss
         compRoll = compPlay()
+        //display compRoll value on display for 2 seconds w delay
         bossRabbit.move(compRoll)
         checkWin()
         changePlayer() //end with fred again
@@ -54,8 +77,9 @@ startGame = () => {
 }
 
 compPlay = () => {
-    //roll die animation
-    //display diceRoll as text popup
+    //roll die animation here
+    //die disappears
+    //rolled number appears then disappears, 2 second delay then move div 
     console.log("computer is playing")
     return Math.floor(Math.random() * 9 + 1)
 }
@@ -74,26 +98,35 @@ changePlayer = () => {
 }
 
 checkWin = () => {
-    if (fredRabbit.distance >= 90 || bossRabbit.distance >= 90) {
+    if (fredRabbit.distance >= 90 && bossRabbit.distance < 90) {
         winRound = true
-        //add winning/losing message with restart button
+        endMsg.innerText = "You win!"
         endPage.style.display = "block"
-        //this shows restart button 
+        console.log(endMsg)
+        playAgain()
+    } else if (bossRabbit.distance >= 90 && fredRabbit.distance < 90) {
+        winRound = true
+        endMsg.innerText = "Sorry, try again."  //insert text
+        endPage.style.display = "block" //show entire div
+        console.log(endMsg)
         playAgain()
     } else {
         winRound = false
         console.log("game is still goin")
+       
     }
 }
 
 rollDie = () => {
     diceButton.style.display = "none"
     console.log("rolling dice")
+    //rolling die animation here
     return Math.floor(Math.random() * 9 + 1)
 }
 
 playAgain = () => {
     restartBtn.addEventListener("click", () => {
+        //remove message from endPage
         endPage.style.display = "none"
         fredRabbit.resetPosition()
         bossRabbit.resetPosition()
@@ -102,7 +135,12 @@ playAgain = () => {
     })
 }
 
+//function for rolling die animation? 
+
 startButton.addEventListener("click", startGame)
+console.log(dieImage.style)
+
+
 
 /*   
 game logic
