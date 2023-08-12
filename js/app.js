@@ -62,19 +62,13 @@ startGame = () => {
     console.log("start button clicked")
     mainPage.style.display = "none"
     diceButton.style.display = "block"
-    //glowing roll die 
     diceButton.addEventListener("click", () => {
         diceRoll = rollDie()
-        //display diceRoll value on display for 2 second w delay
         rollingAnimation()
         fredRabbit.move(diceRoll)
         checkWin()
         changePlayer() //fred to boss
         compRoll = compPlay()
-        //display compRoll value on display for 2 seconds w delay
-            //roll die animation here
-    //die disappears
-    //rolled number appears then disappears, 2 second delay then move div 
         bossRabbit.move(compRoll)
         checkWin()
         changePlayer() //end with fred again
@@ -90,12 +84,10 @@ changePlayer = () => {
     if (winRound === false && currentPlayer === fredRabbit) {
         currentPlayer = bossRabbit
         console.log(currentPlayer) //"computer turn"
-        //add bossRabbit animation
     } else if (winRound === false && currentPlayer === bossRabbit) {
         currentPlayer = fredRabbit
         diceButton.style.display = "block"
         console.log(currentPlayer)
-        //add fredRabbit animation
     }
 }
 
@@ -119,7 +111,6 @@ checkWin = () => {
 
 rollDie = () => {
     diceButton.style.display = "none"
-    //rolling die animation here
     return Math.floor(Math.random() * 9 + 1)
 }
 
@@ -132,8 +123,6 @@ playAgain = () => {
         endPage.style.display = "none"
         fredRabbit.resetPosition()
         bossRabbit.resetPosition()
-        //remove pictures too
-
         mainPage.style.display = "block"
         startButton.addEventListener("click", startGame)
     })
